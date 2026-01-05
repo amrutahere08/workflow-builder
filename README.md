@@ -1,70 +1,46 @@
-# Getting Started with Create React App
+# Workflow Builder
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+A visual, interactive tool for designing and managing complex workflow logic. This application allows users to build tree-based workflows dynamically, handling branching logic and sequential actions with a clean, custom-built UI.
 
-## Available Scripts
+## Features
 
-In the project directory, you can run:
+### Visual Workflow Canvas
+- Renders a hierarchical tree structure using recursive components.
+- Supports unlimited nesting of actions and conditional branches.
+- Auto-adjusts layout and connecting lines based on the tree structure.
 
-### `npm start`
+### Node Management
+- **Action Nodes**: Represent single sequential steps.
+- **Branch Nodes (Condition)**: Create "True" and "False" paths for logic flow.
+- **End Nodes**: Mark the termination of a workflow path.
+- **Context-Aware Interactions**: Custom mock menus for adding specific node types based on context.
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+### Robust State Management
+- **Undo/Redo**: Implements a travel-aware history stack to revert or replay structural changes.
+- **Auto-Repair Logic**: Intelligently reconnects child nodes to the nearest parent when a node is deleted, preserving the flow.
+- **Save State**: Logs the current JSON structure of the workflow to the console for export/debugging.
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+## Tech Stack
 
-### `npm test`
+- **React**: Functional components, Hooks (`useState`, `useContext`, `useCallback`).
+- **Context API**: Centralized state management for the workflow tree and history.
+- **CSS3**: Pure CSS for styling, layout, and visual connectors (NO external UI libraries).
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+## Project Structure
 
-### `npm run build`
+- `src/components/`: UI components like `Node.js` that handle recursive rendering.
+- `src/context/`: Contains `WorkflowContext.js` for global state and logic (add/delete/undo).
+- `src/App.js`: Main layout and control bar implementation.
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+## Getting Started
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+1.  **Install dependencies**
+    ```bash
+    npm install
+    ```
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
-
-### `npm run eject`
-
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
-
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
-
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+2.  **Start the application**
+    ```bash
+    npm start
+    ```
+    Runs the app in development mode at [http://localhost:3000](http://localhost:3000).
