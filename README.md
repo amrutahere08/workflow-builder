@@ -2,6 +2,13 @@
 
 A visual, interactive tool for designing and managing complex workflow logic. This application allows users to build tree-based workflows dynamically, handling branching logic and sequential actions with a clean, custom-built UI.
 
+
+**[Live Demo](https://workflow-builder-git-main-amrutas-projects-d90c29e5.vercel.app)** | **[Repository]**
+
+## Project Overview
+
+This application allows users to build complex logic trees dynamically. It features a custom recursive rendering engine to visualize nodes, branches, and connections without relying on third-party diagramming libraries
+
 ## Features
 
 ### Visual Workflow Canvas
@@ -22,15 +29,22 @@ A visual, interactive tool for designing and managing complex workflow logic. Th
 
 ## Tech Stack
 
-- **React**: Functional components, Hooks (`useState`, `useContext`, `useCallback`).
-- **Context API**: Centralized state management for the workflow tree and history.
-- **CSS3**: Pure CSS for styling, layout, and visual connectors (NO external UI libraries).
+*   **Framework**: React (Create React App / Vite)
+*   **Language**: JavaScript
+*   **Styling**: Pure CSS (No external UI libraries like MUI/Chakra)
+*   **State Management**: React `Context API` + `useReducer` pattern for history management.
 
 ## Project Structure
 
-- `src/components/`: UI components like `Node.js` that handle recursive rendering.
-- `src/context/`: Contains `WorkflowContext.js` for global state and logic (add/delete/undo).
-- `src/App.js`: Main layout and control bar implementation.
+```bash
+src/
+├── components/
+│   └── Node.js           # Recursive component for rendering the tree
+├── context/
+│   └── WorkflowContext.js # Global state, reducer logic, and Undo/Redo history
+├── App.js                # Main layout and header controls
+└── App.css               # All custom styling and tree visualization logic
+```
 
 ## Getting Started
 
@@ -39,8 +53,19 @@ A visual, interactive tool for designing and managing complex workflow logic. Th
     npm install
     ```
 
-2.  **Start the application**
+2.  **Start the development server**
     ```bash
     npm start
     ```
-    Runs the app in development mode at [http://localhost:3000](http://localhost:3000).
+    Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+
+## How to Use
+
+1.  **Add a Node**: Hover over any component and click the **+** button.
+    *   *Tip: Adding a "Condition" instantly creates two branch paths.*
+2.  **Branching**: If a branch path is empty, click **+ Action** or **+ End** in the dotted "Empty Slot" box.
+3.  **Edit**: Click directly on any node label to rename it.
+4.  **Delete**: Click the **×** button. Watch how the tree heals itself!
+5.  **Undo/Redo**: Made a mistake? Use the buttons in the header.
+6.  **Save**: Click "Save Workflow" and check your browser's console (F12) to see the JSON output.
+
