@@ -62,7 +62,7 @@ src/
 ## How to Use
 
 1.  **Add a Node**: Hover over any component and click the **+** button.
-    * Tip: Adding a "Condition" instantly creates two branch paths.*
+     (Tip: Adding a "Condition" instantly creates two branch paths.)
 2.  **Branching**: If a branch path is empty, click **+ Action** or **+ End** in the dotted "Empty Slot" box.
 3.  **Edit**: Click directly on any node label to rename it.
 4.  **Delete**: Click the **×** button. Watch how the tree heals itself!
